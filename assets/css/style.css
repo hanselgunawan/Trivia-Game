@@ -1,0 +1,92 @@
+html
+{
+    background: url("../images/dc-marvel-wallpaper.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* HEADER */
+.col-header
+{
+    background-color: transparent !important;
+    text-align: center;
+    height: 200px;
+}
+
+.col-header h1
+{
+    line-height: 200px;
+}
+
+/* QUESTION CONTAINER */
+.col-question-container
+{
+    border: 1px solid black;
+    height: 500px;
+    background-color: white;
+    background: url("../images/background-img.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* TIMER */
+.col-timer
+{
+    text-align: center;
+    height: 100px;
+}
+
+.col-timer p
+{
+    line-height: 100px;
+}
+
+.countdown-clock
+{
+    width: 100px !important;
+    height: 250px !important;
+    color:white;
+}
+
+/* QUESTION */
+.col-question
+{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.col-question p
+{
+    font-size: 16pt;
+    color: white;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 black;
+}
+
+/* ANSWER */
+.col-answers
+{
+    padding-top: 20px;
+}
+
+.col-answers ul li
+{
+    text-align: center;
+}
+
+/* WRONG ANSWER */
+.col-wrong-answer
+{
+    text-align: center;
+}
+
+.col-wrong-answer .correct-answer-container
+{
+    color:white;
+    font-size: 22pt;
+    text-shadow: 3px 3px 0 black;
+}
+
+.gif-image
+{
+    height: 200px;
+    width: 350px;
+}

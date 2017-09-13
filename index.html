@@ -2,9 +2,101 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Trivia Game</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/TimeCircles.css" />
+    <link rel="stylesheet" href="assets/css/hover.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/javascript/jquery.js"></script>
+    <script src="assets/javascript/TimeCircles.js"></script>
+
 </head>
 <body>
+<div class="row">
+    <div class="col-lg-12 col-header">
+        <h1>Computer Science - Trivia Quiz</h1>
+    </div>
+</div>
 
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 col-question-container">
+        <div class="row">
+            <div class="col-lg-9"></div>
+            <div class="col-lg-3 col-timer">
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <div id="CountDownTimer" data-timer="900" class="countdown-clock"></div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+            </div>
+        </div>
+        <div id="question-answer">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 col-question">
+                    <p id="displayQuestion"></p>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 col-answers">
+                    <ul class="list-group multiple-choices">
+                        <li class="list-group-item hvr-shutter-out-horizontal list-0 answer-list"></li>
+                        <li class="list-group-item hvr-shutter-out-horizontal list-1 answer-list"></li>
+                        <li class="list-group-item hvr-shutter-out-horizontal list-2 answer-list"></li>
+                        <li class="list-group-item hvr-shutter-out-horizontal list-3 answer-list"></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <div id="wrong-answer">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 col-question">
+                    <p>You're wrong!</p>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 col-wrong-answer">
+                    <p class="correct-answer-container">The correct answer was: <span class="correct-answer">Adam</span></p>
+                    <div class="giphy-result">
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <div id="correct-answer">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 col-question">
+                    <p>You're right!</p>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 col-wrong-answer">
+                    <div class="giphy-result">
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
+
+<script src="assets/javascript/myCountdown.js"></script>
+<script src="assets/javascript/trivia.js"></script>
 </body>
 </html>
