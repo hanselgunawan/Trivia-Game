@@ -14,10 +14,13 @@ var trivia = {
     unanswered:0,
     chosenQuestion: 0,
     secondsGame:0,
+    question_num:1,
+    difficulty: "",
+    num_of_question: 0,
     triviaQuestion : [],
     generateQuestion:function () {
         $.ajax({
-            url: "https://opentdb.com/api.php?amount=1&category=9&difficulty=hard&type=multiple",
+            url: "https://opentdb.com/api.php?amount="+this.num_of_question+"&category=9&difficulty="+this.difficulty+"&type=multiple",
             dataType: "json",
             success: function(data){
                 for (var i in data.results)
@@ -53,13 +56,16 @@ var trivia = {
     startGame:function()
     {
 
-        //use trivia.triviaQ.splice(<num of array that you want to delete>,1) to remove an element/object
+        //use trivia.triviaQuestion.splice(<num of array that you want to delete>,1) to remove an element/object
         $("#question-answer").show();
         $("#correct-answer").hide();
         $("#wrong-answer").hide();
         $("#times-up").hide();
         $("#game-over").hide();
+        $("#choose-difficulty").hide();
+        $("#choose-num-of-question").hide();
         $("#opening-screen").hide();
+
         $("#CountDownTimer").TimeCircles().restart();
 
         this.winTime = 0;
@@ -69,6 +75,7 @@ var trivia = {
         {
             var answer_array = [];
             var randomCounter = Math.floor(Math.random() * parseInt(Object.keys(this.triviaQuestion).length));
+            $("#remaining-question").html("Question " + this.question_num + " out of " + this.num_of_question + ":");
             $("#displayQuestion").html(this.triviaQuestion[randomCounter].question);
             answer_array = this.pushQuestion(randomCounter, answer_array);
             this.shuffle(answer_array);
@@ -171,6 +178,7 @@ var trivia = {
             $("#correct-answer").show();
             $("#CountDownTimer").TimeCircles().stop();
             this.correctTimer();
+            this.question_num++;
             this.correct++;
         }
         else
@@ -180,6 +188,7 @@ var trivia = {
             $("#CountDownTimer").TimeCircles().stop();
             this.incorrectTimer();
             $(".correct-answer-span").html(this.triviaQuestion[chosenQuestion].answer);
+            this.question_num++;
             this.incorrect++;
         }
         this.displayGiphy(this.triviaQuestion[chosenQuestion].answer);
@@ -203,7 +212,28 @@ var trivia = {
         this.displayGiphy(this.triviaQuestion[chosenQuestion].answer);
         $(".correct-answer-span").html(this.triviaQuestion[chosenQuestion].answer);
         this.triviaQuestion.splice(chosenQuestion,1);
+        this.question_num++;
         this.unanswered++;
+    },
+    displayDifficulty:function () {
+        $("#question-answer").hide();
+        $("#correct-answer").hide();
+        $("#wrong-answer").hide();
+        $("#times-up").hide();
+        $("#game-over").hide();
+        $("#choose-difficulty").show();
+        $("#choose-num-of-question").hide();
+        $("#opening-screen").hide();
+    },
+    displayNumOfQuestion:function () {
+        $("#question-answer").hide();
+        $("#correct-answer").hide();
+        $("#wrong-answer").hide();
+        $("#times-up").hide();
+        $("#game-over").hide();
+        $("#choose-difficulty").hide();
+        $("#choose-num-of-question").show();
+        $("#opening-screen").hide();
     },
     gameOver:function () {
         $("#question-answer").hide();
@@ -226,12 +256,24 @@ $(document).ready(function() {
     $("#wrong-answer").hide();
     $("#times-up").hide();
     $("#game-over").hide();
+    $("#choose-difficulty").hide();
+    $("#choose-num-of-question").hide();
     $("#opening-screen").show();
 
     $("#CountDownTimer").TimeCircles().stop();
 
 
     $("#lets-start").on("click", function (event) {
+        trivia.displayDifficulty()
+    });
+
+    $(".difficulty-list").on("click", function (event) {
+        trivia.difficulty = $(event.target).text();
+        trivia.displayNumOfQuestion();
+    });
+
+    $(".num-question-list").on("click", function (event) {
+        trivia.num_of_question = $(event.target).text();
         trivia.generateQuestion();
     });
 
@@ -245,8 +287,12 @@ $(document).ready(function() {
             cache: false,
             success: function(content) {
                 $("#body-game").html(content);
-                $("#opening-screen").hide();
-                trivia.generateQuestion();
+                trivia.question_num = 1;
+                this.num_of_question = 0;
+                this.correct = 0;
+                this.incorrect = 0;
+                this.unanswered = 0;
+                trivia.displayDifficulty();
             }
         });
     });

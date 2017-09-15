@@ -26,6 +26,12 @@ html
     transition: 0.1s ease-in all;
 }
 
+/* DIFFICULTY */
+.difficulty-choices
+{
+    text-transform: capitalize;
+}
+
 /* HEADER */
 .col-header
 {
