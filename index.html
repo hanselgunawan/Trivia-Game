@@ -15,7 +15,7 @@
 <body>
 <div class="row">
     <div class="col-lg-12 col-header">
-        <h1>Computer Science - Trivia Quiz</h1>
+        <h1>General Knowledge - Trivia Quiz</h1>
     </div>
 </div>
 
@@ -34,62 +34,141 @@
                 </div>
             </div>
         </div>
-        <div id="question-answer">
+
+        <div id="opening-screen">
             <div class="row">
                 <div class="col-lg-2"></div>
                 <div class="col-lg-8 col-question">
-                    <p id="displayQuestion"></p>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 col-answers">
-                    <ul class="list-group multiple-choices">
-                        <li class="list-group-item hvr-shutter-out-horizontal list-0 answer-list"></li>
-                        <li class="list-group-item hvr-shutter-out-horizontal list-1 answer-list"></li>
-                        <li class="list-group-item hvr-shutter-out-horizontal list-2 answer-list"></li>
-                        <li class="list-group-item hvr-shutter-out-horizontal list-3 answer-list"></li>
-                    </ul>
+                    <button id="lets-start">Let's Start!</button>
                 </div>
                 <div class="col-lg-2"></div>
             </div>
         </div>
-
-        <div id="wrong-answer">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 col-question">
-                    <p>You're wrong!</p>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 col-wrong-answer">
-                    <p class="correct-answer-container">The correct answer was: <span class="correct-answer">Adam</span></p>
-                    <div class="giphy-result">
+        <div id-="body-game">
+            <div id="question-answer">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-question">
+                        <p id="displayQuestion"></p>
                     </div>
+                    <div class="col-lg-2"></div>
                 </div>
-                <div class="col-lg-2"></div>
-            </div>
-        </div>
-
-        <div id="correct-answer">
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 col-question">
-                    <p>You're right!</p>
-                </div>
-                <div class="col-lg-2"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-8 col-wrong-answer">
-                    <div class="giphy-result">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-answers">
+                        <ul class="list-group multiple-choices">
+                            <li class="list-group-item hvr-shutter-out-horizontal list-0 answer-list"></li>
+                            <li class="list-group-item hvr-shutter-out-horizontal list-1 answer-list"></li>
+                            <li class="list-group-item hvr-shutter-out-horizontal list-2 answer-list"></li>
+                            <li class="list-group-item hvr-shutter-out-horizontal list-3 answer-list"></li>
+                        </ul>
                     </div>
+                    <div class="col-lg-2"></div>
                 </div>
-                <div class="col-lg-2"></div>
+            </div>
+
+            <div id="wrong-answer">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-question">
+                        <p>You're wrong!</p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-wrong-answer">
+                        <p class="correct-answer-container">The correct answer was: <span class="correct-answer-span"></span></p>
+                        <div class="giphy-result">
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+
+            <div id="correct-answer">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-question">
+                        <p>You're right!</p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-wrong-answer">
+                        <div class="giphy-result">
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+
+            <div id="times-up">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-question">
+                        <p>Time's Up!</p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-wrong-answer">
+                        <p class="correct-answer-container">The correct answer was: <span class="correct-answer-span"></span></p>
+                        <div class="giphy-result">
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+
+            <div id="game-over">
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-question">
+                        <p>All Done!</p>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8 col-wrong-answer">
+                        <p class="correct-answer-container">Here's how you did</p>
+                        <div class="row summary">
+                            <div class="col-lg-6">
+                                <p class="correct-answer-container"><b>Correct:</b></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p id="number_of_correct_answer" class="summary_number">0</p>
+                            </div>
+                        </div>
+                        <div class="row summary">
+                            <div class="col-lg-6">
+                                <p class="correct-answer-container"><b>Incorrect:</b></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p id="number_of_incorrect_answer" class="summary_number">0</p>
+                            </div>
+                        </div>
+                        <div class="row summary">
+                            <div class="col-lg-6">
+                                <p class="correct-answer-container"><b>Unanswered:</b></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p id="number_of_unanswered" class="summary_number">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4 restart-btn">
+                        <button id="restart-game">Restart Game</button>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
             </div>
         </div>
     </div>

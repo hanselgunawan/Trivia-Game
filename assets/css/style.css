@@ -1,7 +1,29 @@
 html
 {
-    background: url("../images/dc-marvel-wallpaper.jpg") no-repeat center center fixed;
+    background: url("../images/general-knowledge.jpg") no-repeat center center fixed;
     background-size: cover;
+}
+
+/* OPENING SCREEN */
+#opening-screen
+{
+    height: 300px;
+    padding-top: 100px;
+}
+
+#opening-screen button
+{
+    font-size: 30pt;
+    transition: 0.1s ease-in all;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#opening-screen button:hover
+{
+    background-color: #6a6e6c;
+    color:white;
+    transition: 0.1s ease-in all;
 }
 
 /* HEADER */
@@ -15,6 +37,9 @@ html
 .col-header h1
 {
     line-height: 200px;
+    color:white;
+    text-shadow: 5px 5px black;
+    font-size: 40pt;
 }
 
 /* QUESTION CONTAINER */
@@ -23,7 +48,7 @@ html
     border: 1px solid black;
     height: 500px;
     background-color: white;
-    background: url("../images/background-img.jpg") no-repeat center center fixed;
+    background: url("../images/black-wallpaper.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -72,6 +97,11 @@ html
     text-align: center;
 }
 
+.correct-answer-span
+{
+    font-weight: bold;
+}
+
 /* WRONG ANSWER */
 .col-wrong-answer
 {
@@ -89,4 +119,41 @@ html
 {
     height: 200px;
     width: 350px;
+}
+
+/* SUMMARY */
+.summary
+{
+    text-align: right;
+}
+
+.summary_number
+{
+    color:white;
+    font-size: 22pt;
+    text-shadow: 3px 3px 0 black;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.restart-btn
+{
+    text-align: center;
+}
+
+.restart-btn button
+{
+    font-size: 14pt;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: 0.1s ease-in all;
+    background-color: white;
+}
+
+.restart-btn button:hover
+{
+    background-color: #6a6e6c;
+    color:white;
+    font-weight: bold;
+    transition: 0.1s ease-in all;
 }

@@ -5,11 +5,19 @@ function q(q_, a_, ia_){
 }
 
 var trivia = {
+    gameTime:0,
+    winTime:0,
+    loseTime:0,
+    timesUpTime:0,
+    correct: 0,
+    incorrect: 0,
+    unanswered:0,
     chosenQuestion: 0,
+    secondsGame:0,
     triviaQuestion : [],
     generateQuestion:function () {
         $.ajax({
-            url: "https://opentdb.com/api.php?amount=15&category=18&difficulty=medium&type=multiple",
+            url: "https://opentdb.com/api.php?amount=1&category=9&difficulty=hard&type=multiple",
             dataType: "json",
             success: function(data){
                 for (var i in data.results)
@@ -46,6 +54,16 @@ var trivia = {
     {
 
         //use trivia.triviaQ.splice(<num of array that you want to delete>,1) to remove an element/object
+        $("#question-answer").show();
+        $("#correct-answer").hide();
+        $("#wrong-answer").hide();
+        $("#times-up").hide();
+        $("#game-over").hide();
+        $("#opening-screen").hide();
+        $("#CountDownTimer").TimeCircles().restart();
+
+        this.winTime = 0;
+        this.loseTime = 0;
         console.log(Object.keys(this.triviaQuestion).length);
         if(Object.keys(this.triviaQuestion).length>0)
         {
@@ -59,6 +77,17 @@ var trivia = {
                 $(".list-"+j+"").html(answer_array[j]);
             }
             this.chosenQuestion = randomCounter;
+
+            this.gameTime = setTimeout(function(){
+                trivia.timesUp(randomCounter);//we have to use TRIVIA, instead of THIS because its inside the function! Different scope!
+                trivia.correctTimer();
+                trivia.incorrectTimer();
+            }, 29900);
+
+        }
+        else
+        {
+            this.gameOver();
         }
     },
     displayGiphy:function (userAnswer) {
@@ -110,32 +139,115 @@ var trivia = {
             });
         }
     },
+    correctTimer:function()
+    {
+        this.winTime = setTimeout(function () {
+            clearTimeout(trivia.gameTime);
+            $("#question-answer").show();
+            $("#correct-answer").hide();
+            $("#CountDownTimer").TimeCircles().restart();
+            $(".gif-image").attr("src","");
+            trivia.startGame();
+            clearTimeout(trivia.winTime);
+        }, 4000);
+    },
+    incorrectTimer:function()
+    {
+        this.loseTime = setTimeout(function () {
+            clearTimeout(trivia.gameTime);
+            $("#question-answer").show();
+            $("#wrong-answer").hide();
+            $("#CountDownTimer").TimeCircles().restart();
+            $(".gif-image").attr("src","");
+            trivia.startGame();
+            clearTimeout(trivia.loseTime);
+        }, 4000);
+    },
     checkAnswer:function(chosenQuestion, userAnswer)
     {
         if(this.triviaQuestion[chosenQuestion].answer === userAnswer)
         {
             $("#question-answer").hide();
             $("#correct-answer").show();
+            $("#CountDownTimer").TimeCircles().stop();
+            this.correctTimer();
+            this.correct++;
         }
         else
         {
             $("#question-answer").hide();
             $("#wrong-answer").show();
+            $("#CountDownTimer").TimeCircles().stop();
+            this.incorrectTimer();
+            $(".correct-answer-span").html(this.triviaQuestion[chosenQuestion].answer);
+            this.incorrect++;
         }
-        this.displayGiphy(userAnswer);
+        this.displayGiphy(this.triviaQuestion[chosenQuestion].answer);
         trivia.triviaQuestion.splice(chosenQuestion,1);
+    },
+    timesUp:function (chosenQuestion) {
+
+        $("#question-answer").hide();
+        $("#times-up").show();
+        $("#CountDownTimer").TimeCircles().stop();
+        this.timesUpTime = setTimeout(function () {
+            clearTimeout(trivia.gameTime);
+            $("#question-answer").show();
+            $("#times-up").hide();
+            $("#CountDownTimer").TimeCircles().restart();
+            $(".gif-image").attr("src","");
+            clearTimeout(trivia.timesUpTime);
+            trivia.startGame();
+        }, 4000);
+
+        this.displayGiphy(this.triviaQuestion[chosenQuestion].answer);
+        $(".correct-answer-span").html(this.triviaQuestion[chosenQuestion].answer);
+        this.triviaQuestion.splice(chosenQuestion,1);
+        this.unanswered++;
+    },
+    gameOver:function () {
+        $("#question-answer").hide();
+        $("#correct-answer").hide();
+        $("#wrong-answer").hide();
+        $("#times-up").hide();
+        $("#game-over").show();
+
+        $("#number_of_correct_answer").html(this.correct);
+        $("#number_of_incorrect_answer").html(this.incorrect);
+        $("#number_of_unanswered").html(this.unanswered);
+
+        $("#CountDownTimer").TimeCircles().stop();
     }
 };
 
 $(document).ready(function() {
-    $("#question-answer").show();
+    $("#question-answer").hide();
     $("#correct-answer").hide();
     $("#wrong-answer").hide();
+    $("#times-up").hide();
+    $("#game-over").hide();
+    $("#opening-screen").show();
 
-    trivia.generateQuestion();
+    $("#CountDownTimer").TimeCircles().stop();
+
+
+    $("#lets-start").on("click", function (event) {
+        trivia.generateQuestion();
+    });
 
     $(".answer-list").on("click", function (event) {
         trivia.checkAnswer(trivia.chosenQuestion, $(event.target).text());
-        trivia.startGame();
+    });
+
+    $("#restart-game").on("click", function (event) {
+        $.ajax({
+            url: "http://localhost:63343/Hansel_UCLA/Trivia-Game/index.html?_ijt=srr5ti0h3lrfkoav8vevsj4ebf",
+            cache: false,
+            success: function(content) {
+                $("#body-game").html(content);
+                $("#opening-screen").hide();
+                trivia.generateQuestion();
+            }
+        });
     });
 });
