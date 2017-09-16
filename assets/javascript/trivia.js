@@ -288,10 +288,10 @@ $(document).ready(function() {
             success: function(content) {
                 $("#body-game").html(content);
                 trivia.question_num = 1;
-                this.num_of_question = 0;
-                this.correct = 0;
-                this.incorrect = 0;
-                this.unanswered = 0;
+                trivia.num_of_question = 0;
+                trivia.correct = 0;
+                trivia.incorrect = 0;
+                trivia.unanswered = 0;
                 trivia.displayDifficulty();
             }
         });
