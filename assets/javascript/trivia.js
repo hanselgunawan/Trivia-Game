@@ -208,7 +208,6 @@ var trivia = {
             clearTimeout(trivia.timesUpTime);
             trivia.startGame();
         }, 4000);
-
         this.displayGiphy(this.triviaQuestion[chosenQuestion].answer);
         $(".correct-answer-span").html(this.triviaQuestion[chosenQuestion].answer);
         this.triviaQuestion.splice(chosenQuestion,1);
