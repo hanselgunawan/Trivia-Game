@@ -163,3 +163,114 @@ html
     font-weight: bold;
     transition: 0.1s ease-in all;
 }
+
+@media (max-width: 576px) {
+    #opening-screen
+    {
+        height: 300px;
+        padding-top: 50px;
+    }
+    #opening-screen button {
+        font-size: 20pt;
+        transition: 0.1s ease-in all;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .col-header
+    {
+        background-color: transparent !important;
+        text-align: center;
+        height: 100px;
+    }
+
+    .col-header h1
+    {
+        line-height: 100px;
+        color:white;
+        text-shadow: 5px 5px black;
+        font-size: 20pt;
+    }
+
+    .col-question-container
+    {
+        border: 1px solid black;
+        height: 500px;
+        background-color: white;
+        background: url("../images/black-wallpaper.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .countdown-clock
+    {
+        width: 80px !important;
+        height: 100px !important;
+        color:white;
+    }
+
+    .col-question
+    {
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .col-question p
+    {
+        font-size: 12pt;
+        color: white;
+        font-weight: bold;
+        text-shadow: 3px 3px 0 black;
+    }
+
+    .col-answers ul li
+    {
+        text-align: center;
+        font-size: 10pt;
+    }
+
+    .col-wrong-answer .correct-answer-container
+    {
+        color:white;
+        font-size: 14pt;
+        text-shadow: 3px 3px 0 black;
+    }
+
+    .summary
+    {
+        text-align: center;
+    }
+
+    .summary_number
+    {
+        color:white;
+        font-size: 15pt;
+        text-shadow: 3px 3px 0 black;
+        text-align: center;
+        margin-right: 20px;
+    }
+
+    .restart-btn
+    {
+        text-align: center;
+    }
+
+    .restart-btn button
+    {
+        font-size: 12pt;
+        margin-top: 0px;
+        border-radius: 5px;
+        transition: 0.1s ease-in all;
+        background-color: white;
+    }
+}
+
+@media (max-width: 736px) {
+    .col-question-container
+    {
+        border: 1px solid black;
+        height: 800px;
+        background-color: white;
+        background: url("../images/black-wallpaper.jpg") no-repeat center center fixed;
+        background-size: cover;
+    }
+}
