@@ -282,7 +282,7 @@ $(document).ready(function() {
 
     $("#restart-game").on("click", function (event) {
         $.ajax({
-            url: "/Trivia-Game",
+            url: "http://hanselgunawan.github.io/Trivia-Game/",
             cache: false,
             success: function(content) {
                 $("#body-game").html(content);
