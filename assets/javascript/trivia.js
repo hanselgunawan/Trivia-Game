@@ -282,7 +282,7 @@ $(document).ready(function() {
 
     $("#restart-game").on("click", function (event) {
         $.ajax({
-            url: "http://localhost:63343/Hansel_UCLA/Trivia-Game/index.html?_ijt=srr5ti0h3lrfkoav8vevsj4ebf",
+            url: "https://hanselgunawan.github.io/Trivia-Game/",
             cache: false,
             success: function(content) {
                 $("#body-game").html(content);
