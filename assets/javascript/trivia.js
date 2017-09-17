@@ -151,7 +151,7 @@ var trivia = {
     },
     correctTimer:function()
     {
-        clearTimeout(trivia.gameTime);
+        clearInterval(this.gameTime);
         this.winTime = setTimeout(function () {
             trivia.countdown = 0;
             $("#question-answer").show();
@@ -164,7 +164,7 @@ var trivia = {
     },
     incorrectTimer:function()
     {
-        clearTimeout(trivia.gameTime);
+        clearInterval(this.gameTime);
         this.loseTime = setTimeout(function () {
             trivia.countdown = 0;
             $("#question-answer").show();
