@@ -88,7 +88,6 @@ var trivia = {
 
             this.gameTime = setInterval(function(){
                 trivia.countdown++;
-                console.log(trivia.countdown);
                 if(trivia.countdown===30)
                 {
                     trivia.timesUp(randomCounter);
