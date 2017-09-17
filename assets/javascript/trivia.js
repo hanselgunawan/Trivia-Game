@@ -15,6 +15,7 @@ var trivia = {
     chosenQuestion: 0,
     secondsGame:0,
     question_num:1,
+    countdown:0,
     difficulty: "",
     num_of_question: 0,
     triviaQuestion : [],
@@ -85,12 +86,14 @@ var trivia = {
             }
             this.chosenQuestion = randomCounter;
 
-            this.gameTime = setTimeout(function(){
-                trivia.timesUp(randomCounter);//we have to use TRIVIA, instead of THIS because its inside the function! Different scope!
-                trivia.correctTimer();
-                trivia.incorrectTimer();
-            }, 29900);
-
+            this.gameTime = setInterval(function(){
+                trivia.countdown++;
+                console.log(trivia.countdown);
+                if(trivia.countdown===30)
+                {
+                    trivia.timesUp(randomCounter);
+                }
+            }, 1000);
         }
         else
         {
@@ -148,8 +151,9 @@ var trivia = {
     },
     correctTimer:function()
     {
+        clearTimeout(trivia.gameTime);
         this.winTime = setTimeout(function () {
-            clearTimeout(trivia.gameTime);
+            trivia.countdown = 0;
             $("#question-answer").show();
             $("#correct-answer").hide();
             $("#CountDownTimer").TimeCircles().restart();
@@ -160,8 +164,9 @@ var trivia = {
     },
     incorrectTimer:function()
     {
+        clearTimeout(trivia.gameTime);
         this.loseTime = setTimeout(function () {
-            clearTimeout(trivia.gameTime);
+            trivia.countdown = 0;
             $("#question-answer").show();
             $("#wrong-answer").hide();
             $("#CountDownTimer").TimeCircles().restart();
@@ -195,12 +200,12 @@ var trivia = {
         trivia.triviaQuestion.splice(chosenQuestion,1);
     },
     timesUp:function (chosenQuestion) {
-
+        clearInterval(this.gameTime);
         $("#question-answer").hide();
         $("#times-up").show();
         $("#CountDownTimer").TimeCircles().stop();
         this.timesUpTime = setTimeout(function () {
-            clearTimeout(trivia.gameTime);
+            trivia.countdown = 0;
             $("#question-answer").show();
             $("#times-up").hide();
             $("#CountDownTimer").TimeCircles().restart();
