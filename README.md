@@ -30,3 +30,12 @@
 ![](https://imgur.com/2v1MiFu.png)
 ### Result
 ![](https://imgur.com/E5vPnnP.png)
+
+## Demo
+### Start Game
+### Choose Difficulty
+### Choose Number of Questions
+### Right Answer
+### Wrong Answer
+### Time's Up
+### Restart Game
