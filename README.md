@@ -38,6 +38,12 @@
 ![](https://imgur.com/rU7QWx8.gif)
 ### Choose Number of Questions
 ![](https://imgur.com/4vuYFK8.gif)
+### Get The Right Answer
+![](https://imgur.com/EbQxg9R.gif)
+### Get The Wrong Answer
+![](https://imgur.com/7qkwWrI.gif)
+### Time's Up
+![](https://imgur.com/Ah2scDi.gif)
 ### Restart Game
 ![](https://imgur.com/FNIuKgb.gif)
 
