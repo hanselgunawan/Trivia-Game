@@ -7,3 +7,18 @@
 * Choose number of questions
 * Display a GIF for the right answer
 * Display the total of right and wrong answers
+
+## Technologies Used
+* [TimeCircles.js](http://git.wimbarelds.nl/TimeCircles)
+* [jQuery](http://jquery.com/download/)
+* [Bootstrap](https://getbootstrap.com/)
+
+## User Interface (UI)
+### Home
+### Choose Difficulty
+### Choose Number of Questions
+### Question
+### Right Answer
+### Wrong Answer
+### Time's Up
+### Result
