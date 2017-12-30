@@ -41,7 +41,7 @@
 ### Restart Game
 ![](https://imgur.com/FNIuKgb.gif)
 ### Right Answer
-![](https://imgur.com/EbQxg9R.gif)
+![](https://imgur.com/EbQxg9R.png)
 
 ## Production Link
 https://hanselgunawan.github.io/Trivia-Game
