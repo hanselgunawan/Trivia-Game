@@ -48,4 +48,8 @@
 ![](https://imgur.com/FNIuKgb.gif)
 
 ## Production Link
-https://hanselgunawan.github.io/Trivia-Game/
+https://hanselgunawan.github.io/Trivia-Game
+
+## Contact Me
+* E-mail: hanselgunawan94@gmail.com
+* LinkedIn: https://www.linkedin.com/in/hanselbtritama
