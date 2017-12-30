@@ -39,7 +39,7 @@
 ### Choose Number of Questions
 ![](https://imgur.com/4vuYFK8.gif)
 ### Right Answer
-![](https://imgur.com/M2GP9Od.gif)
+![](https://imgur.com/EbQxg9R.gif)
 ### Wrong Answer
 ![](https://imgur.com/7qkwWrI.gif)
 ### Time's Up
