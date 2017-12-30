@@ -38,10 +38,14 @@
 ![](https://imgur.com/rU7QWx8.gif)
 ### Choose Number of Questions
 ![](https://imgur.com/4vuYFK8.gif)
+### Right Answer
+![](https://imgur.com/EbQxg9R.gif)
+### Wrong Answer
+![](https://imgur.com/rSnBnZE.png)
+### Time's Up
+![](https://imgur.com/wqILZZi.png)
 ### Restart Game
 ![](https://imgur.com/FNIuKgb.gif)
-### Right Answer
-![](https://imgur.com/EbQxg9R.png)
 
 ## Production Link
 https://hanselgunawan.github.io/Trivia-Game
