@@ -15,10 +15,18 @@
 
 ## User Interface (UI)
 ### Home
+![](https://imgur.com/BygqbLt.png)
 ### Choose Difficulty
+![](https://imgur.com/2XvKMYG.png)
 ### Choose Number of Questions
+![](https://imgur.com/QWdE8TV.png)
 ### Question
+![](https://imgur.com/sR7NUby.png)
 ### Right Answer
+![](https://imgur.com/Bsv5aYA.png)
 ### Wrong Answer
+![](https://imgur.com/WuajmOr.png)
 ### Time's Up
+![](https://imgur.com/2v1MiFu.png)
 ### Result
+![](https://imgur.com/E5vPnnP.png)
